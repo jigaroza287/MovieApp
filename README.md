@@ -40,7 +40,7 @@ MovieApp/
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/MovieApp.git
+   git clone https://github.com/jigaroza287/MovieApp.git
    ```
 2. Open `MovieApp.xcodeproj` in Xcode.
 3. Build and run the app using an iPhone simulator or device.
@@ -59,7 +59,7 @@ The app follows the **MVVM** (Model-View-ViewModel) architecture for better sepa
 
 - **Model**: Defines movie data structure.
 - **ViewModel**: Handles business logic and API interactions.
-- **View**: UI components using SwiftUI.
+- **View**: UI components using UIKit.
 
 ## 📜 Unit & UI Tests
 
