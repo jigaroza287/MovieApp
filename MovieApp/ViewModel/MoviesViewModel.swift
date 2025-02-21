@@ -35,6 +35,7 @@ class MoviesViewModel {
     
     func loadMovies(search: String) {
         httpClient.fetchMovies(searchText: search)
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 print("fetchMovies completed")
                 switch completion {

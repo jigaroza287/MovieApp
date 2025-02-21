@@ -31,7 +31,16 @@ class MoviesViewController: UIViewController {
         searchBar.delegate = self
         return searchBar
     }()
-        
+    
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 24, weight: .bold)
+        label.text = "Movies"
+        return label
+    }()
+    
     lazy var moviesTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -67,16 +76,13 @@ class MoviesViewController: UIViewController {
         
         view.addSubview(stackView)
         
-        stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
+        stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         stackView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         stackView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        stackView.spacing = 10
+        stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(searchBar)
         stackView.addArrangedSubview(moviesTableView)
-        
-        searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
     }
 }
 

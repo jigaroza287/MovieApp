@@ -24,7 +24,6 @@ class HTTPClient {
             .map(\.data)
             .decode(type: MovieResponse.self, decoder: JSONDecoder())
             .map(\.search)
-            .receive(on: DispatchQueue.main)
             .catch { error in
                 return Just([]).setFailureType(to: Error.self).eraseToAnyPublisher()
             }
